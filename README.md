@@ -1,2 +1,2 @@
-# Introduction
-# Commands-and-Scripting
+# Linux Training
+## 1 : [Commands-and-Scripting]
