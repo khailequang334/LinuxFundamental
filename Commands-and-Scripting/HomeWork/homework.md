@@ -13,12 +13,12 @@ Explain commands: # ls removed* | xargs rm -vf
 (*) xargs rm -vf    : By default xargs runs with -n1 -P1, so commands will remove items one by one and sequentialy.
 
 Explain commands: find /var/log -type f -name "*nginx*" | xargs -I{} -n1 -P8 rm -vf {}
-(*) find /var/log -type f -name "*nginx*"   : Find all standard files contain "nginx" in their names.
-(*) pipe "|"                                : Connects stdout of before command to stdin of after command
+(*) find /var/log -type f -name "*nginx*"	: Find all standard files contain "nginx" in their names.
+(*) pipe "|"                             	:  Connects stdout of before command to stdin of after command
 (*) xargs -I{} -n1 -P8 rm -vf {}         	: One item will replace '{}' in command (-n1). Commands will run to 
 											  remove in paralel with maximum 8 processes (-P8).
 
-Ex2:
+**Ex2:**
 Create 100.000 file:
 BASH: 
 $ time for i in {1..100000}; do echo "" > "$i.txt"; done
@@ -39,7 +39,7 @@ user    0m0.539s
 sys     0m0.819s
 
 
-Ex3:
+**Ex3:**
 String comparison in bash base on ASCII alphabetical order. 
 Bash string comparison uses strcmp() C function internally. 
 
@@ -56,7 +56,7 @@ elif [ "$a" \> "$b" ]; then
         echo "$a and $b are equal"
 fi
 
-Ex4:
+**Ex4:**
 1/ Print the name of all users in the system (Hint: /etc/passwd)
 $ awk -F: '{print $1}' /etc/passwd
 Explain: Get content of /etc/passwd, separate data fields by ":" then print out the 1st field/
