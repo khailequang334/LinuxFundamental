@@ -1,4 +1,4 @@
-Ex1: 
+**Ex1:** 
 xargs   : (eXtended ARGumentS) is a command used to build and execute commands from standard input. 
 		  It converts input from standard input into arguments to a command.
 Options : 
@@ -14,8 +14,8 @@ Explain commands: # ls removed* | xargs rm -vf
 
 Explain commands: find /var/log -type f -name "*nginx*" | xargs -I{} -n1 -P8 rm -vf {}
 (*) find /var/log -type f -name "*nginx*"   : Find all standard files contain "nginx" in their names.
-(*) pipe "|"                                : Connects stdout of before command to stdin of after command.
-(*) xargs -I{} -n1 -P8 rm -vf {}          	: One item will replace '{}' in command (-n1). Commands will run to 
+(*) pipe "|"                                : Connects stdout of before command to stdin of after command
+(*) xargs -I{} -n1 -P8 rm -vf {}         	: One item will replace '{}' in command (-n1). Commands will run to 
 											  remove in paralel with maximum 8 processes (-P8).
 
 Ex2:
